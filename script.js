@@ -1,7 +1,3 @@
-// ============================================
-// 1. SELECT ALL REQUIRED HTML ELEMENTS
-// ============================================
-
 // Form
 const form = document.getElementById("regform");
 
@@ -40,11 +36,6 @@ const allFields = form.querySelectorAll("input, select, textarea");
 // Select all error message elements
 const allErrors = form.querySelectorAll(".error");
 
-
-// ============================================
-// 2. LOG ELEMENTS TO THE CONSOLE
-// ============================================
-
 console.log("Registration form:", form);
 console.log("All form fields:", allFields);
 console.log("All error elements:", allErrors);
@@ -54,17 +45,7 @@ console.log("Member counter:", memberCounter);
 console.log("Empty list message:", emptyNote);
 console.log("Dark Mode button:", darkModeButton);
 
-
-// ============================================
-// 3. STORE REGISTERED MEMBERS
-// ============================================
-
 const members = [];
-
-
-// ============================================
-// 4. VALIDATE FULL NAME
-// ============================================
 
 function validateName() {
     const name = nameInput.value.trim();
@@ -83,11 +64,6 @@ function validateName() {
     nameError.textContent = "";
     return true;
 }
-
-
-// ============================================
-// 5. VALIDATE EMAIL
-// ============================================
 
 function validateEmail() {
     const email = emailInput.value.trim();
@@ -109,11 +85,6 @@ function validateEmail() {
     return true;
 }
 
-
-// ============================================
-// 6. VALIDATE PASSWORD
-// ============================================
-
 function validatePassword() {
     const password = passwordInput.value;
 
@@ -131,11 +102,6 @@ function validatePassword() {
     passwordError.textContent = "";
     return true;
 }
-
-
-// ============================================
-// 7. VALIDATE CONFIRM PASSWORD
-// ============================================
 
 function validateConfirmPassword() {
     const password = passwordInput.value;
@@ -157,11 +123,6 @@ function validateConfirmPassword() {
     return true;
 }
 
-
-// ============================================
-// 8. VALIDATE GENDER
-// ============================================
-
 function validateGender() {
     if (genderInput.value === "") {
         genderError.textContent = "Please select your gender.";
@@ -171,11 +132,6 @@ function validateGender() {
     genderError.textContent = "";
     return true;
 }
-
-
-// ============================================
-// 9. VALIDATE DATE OF BIRTH
-// ============================================
 
 function validateDOB() {
     const dob = dobInput.value;
@@ -205,11 +161,6 @@ function validateDOB() {
     return true;
 }
 
-
-// ============================================
-// 10. VALIDATE COUNTRY
-// ============================================
-
 function validateCountry() {
     const country = countryInput.value.trim();
 
@@ -227,11 +178,6 @@ function validateCountry() {
     countryError.textContent = "";
     return true;
 }
-
-
-// ============================================
-// 11. VALIDATE PHONE NUMBER
-// ============================================
 
 function validatePhone() {
     const phone = phoneInput.value.trim();
@@ -258,11 +204,6 @@ function validatePhone() {
     return true;
 }
 
-
-// ============================================
-// 12. VALIDATE BIO
-// ============================================
-
 function validateBio() {
     const bio = bioInput.value.trim();
 
@@ -281,11 +222,6 @@ function validateBio() {
     bioError.textContent = "";
     return true;
 }
-
-
-// ============================================
-// 13. CAPTURE FORM SUBMISSION
-// ============================================
 
 form.addEventListener("submit", function (event) {
 
@@ -351,11 +287,6 @@ form.addEventListener("submit", function (event) {
 
 });
 
-
-// ============================================
-// 14. CLEAR ERRORS AS USERS CORRECT THEIR INPUT
-// ============================================
-
 nameInput.addEventListener("input", validateName);
 
 emailInput.addEventListener("input", validateEmail);
@@ -382,11 +313,6 @@ countryInput.addEventListener("input", validateCountry);
 phoneInput.addEventListener("input", validatePhone);
 
 bioInput.addEventListener("input", validateBio);
-
-
-// ============================================
-// 15. REGISTER A MEMBER USING THE DOM
-// ============================================
 
 function registerMember(member) {
 
@@ -463,19 +389,9 @@ function registerMember(member) {
     updateMemberCounter();
 }
 
-
-// ============================================
-// 16. UPDATE THE MEMBER COUNTER
-// ============================================
-
 function updateMemberCounter() {
     memberCounter.textContent = members.length;
 }
-
-
-// ============================================
-// 17. REMOVE A MEMBER
-// ============================================
 
 function removeMember(member, listItem) {
 
@@ -511,21 +427,11 @@ function removeMember(member, listItem) {
     successMsg.classList.remove("hidden");
 }
 
-
-// ============================================
-// 18. CLEAR ALL VALIDATION ERRORS
-// ============================================
-
 function clearAllErrors() {
     allErrors.forEach(function (error) {
         error.textContent = "";
     });
 }
-
-
-// ============================================
-// 19. DARK MODE TOGGLE
-// ============================================
 
 darkModeButton.addEventListener("click", function () {
 
